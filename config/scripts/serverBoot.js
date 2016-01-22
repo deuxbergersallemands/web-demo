@@ -5,7 +5,7 @@ var Db = require('mongodb').Db,
     Server = require('mongodb').Server;
 
 
-var db = new Db('deuxbergersallemands_web-dev', new Server('localhost', 27017));
+var db = new Db('deuxbergersallemands_web-demo', new Server('localhost', 27017));
 
 
 // Establish connection to db
@@ -45,8 +45,8 @@ console.log(" serveur http lancé sur le port 3000");
 
 /*
 conn = new Mongo()//localhost:27017);
-db = conn.getDB("deuxbergersallemands_web-dev");
-//db = connect("localhost:27017/deuxbergersallemands_web-dev");
+db = conn.getDB("deuxbergersallemands_web-demo");
+//db = connect("localhost:27017/deuxbergersallemands_web-demo");
 cursor = db.collection.find();
 while ( cursor.hasNext() ) {
    printjson( cursor.next() );
@@ -85,7 +85,7 @@ var fso = new ActiveXObject("Scripting.FileSystemObject");
 fso.CreateFolder(".\\Temp\\myFolder");  
 
 console.log("c1");
-fso = null;//db = connect("deuxbergersallemands_web-dev"); 
+fso = null;//db = connect("deuxbergersallemands_web-demo"); 
 */
 
 /*
@@ -98,7 +98,7 @@ var Db = require('mongodb').Db,
     GridStore = require('mongodb').GridStore,
     Grid = require('mongodb').Grid,
     Code = require('mongodb').Code,
-    db = new Db('deuxbergersallemands_web-dev', new Server('localhost', 27017));
+    db = new Db('deuxbergersallemands_web-demo', new Server('localhost', 27017));
     db.connect();
   */
 
