@@ -17,7 +17,8 @@
     </h3>
     <div class='transaction' ng-repeat="transaction in transactionsParticipant">
       <div ng-repeat="participant in transaction.participants" ng-if="participant.participant.mel == mel && participant.statut == 'Ouverte' && participant.montantDu != 0"> 
-       Vous devez {{participant.montantDu}} à {{transaction.preteur.mel}} pour {{transaction.description}}
+       <p> Vous devez {{participant.montantDu}} <h6> à {{transaction.preteur.mel}} </h6>
+        <p> pour {{transaction.description}} </p>
        <button class='btn btn-primary'ng-click="dirigerVers(transaction._id)"> Régler  </button>
       </div>
     </div>

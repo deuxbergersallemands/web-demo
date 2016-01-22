@@ -9,30 +9,26 @@
 	<ng-form name="FormGroupe"  class="maGroupe">
 	<br/><br/>
   		<label for="Montant"> Nom du groupe (evenement): </label> <br/>
-  		<input  ng-model="NomGroupe" required="obligatoire">  </input>
+  		<input  class='form-control' ng-model="NomGroupe" required="obligatoire">  </input>
   		<br/><br/>
   	Ce Groupe fait l'objet de l'organisation d'un evenement pour les utilisteurs suivants :<br/><br/>
   		Nom : 
-      <input name="inputName" ng-model="chercheAmi" placeholder="Chercher parmi vos amis">
+      <input class='form-control' name="inputName" ng-model="chercheAmi" placeholder="Chercher parmi vos amis">
   		<br/>
-      <div ng-repeat="ami in amis | filter: chercheAmi">
-        <div ng-repeat="a in ami.amis">
+      <div ng-repeat="ami in amis | filter: chercheAmi" ng-if='chercheAmi.length > 1'>
+        <div class='amisTrans' ng-repeat="a in ami.amis">
            <h6>{{a.nom}}</h6>
            <button class="btn btn-primary" ng-click="ajouterAmi(a)"> + </button> 
         </div>
       </div>
-      <div ng-repeat="nom in noms" id="nameT" >
-        Ajouté:  {{nom.nom}}
+      Ajouté:
+      <span ng-repeat="nom in noms" id="nameT" >
+          {{ nom.nom }}
+      </span>
+      <div>
+  		  <label for="Description"> Description: </label> <br/>
+  		  <textarea class='form-control' ng-model="description" required="obligatoire"> ... </textarea>
       </div>
-  		<label for="Description"> Description: </label> <br/>
-  		<textarea ng-model="description" required="obligatoire"> ... </textarea>
- 
-	    <br/><br/>
-  		<br/><br/>
-  		
-  		<br>
-	  
-	  <br/><br/>
   		<button class="btn btn-primary btn-block" ng-click="sauvegarder()"> Sauvegarder </button>
 
   </ng-form>

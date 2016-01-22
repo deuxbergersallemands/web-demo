@@ -18,3 +18,19 @@ body {
 .solde {
 	float: left;
 }
+
+.reception, .historique {
+  text-align: center;
+}
+
+
+.amisTrans {
+  display: inline-block;
+  margin: 3px;
+  padding: 3px;
+  background-color: #9BD9D9;
+  width: 170px;
+  height: 100px;
+  text-align: center;
+  border-radius: 10px;
+}

@@ -212,11 +212,10 @@ MongoClient.connect(url, function(err, db) {
                            Utilisateur.update({"mel": req.cookies.utilisateur}, {
                            $set: {"solde": soldeNouveau}
                         })
+                           res.send();
                          }
                       });
                      })
-                    res.send();
-                    //res.send(transaction);
                    }
                 });
             });
@@ -266,7 +265,7 @@ MongoClient.connect(url, function(err, db) {
                            Utilisateur.update({"mel": melUtil}, {
                            $set: {"solde": soldeNouveau}
                         });
-
+                       req.body.DateCreation = new Date();
                        Transaction.insert(req.body);
                        res.send();
 
@@ -293,19 +292,6 @@ MongoClient.connect(url, function(err, db) {
 
 /**************** Collection Groupe******************/
     db.collection("Groupe", function(err, Groupe) {
-        app.get('/groupe/:id',function(req,res){
-
-           
-            if(req!=null){
-                var result =Groupe.findOne("req")
-                if(result!=null){
-                    res.result=result;
-                    res.send();
-                }
-                else
-                    res.send("Aucun groupe trouvé");
-            }
-        });
 
         // Récupérer tous les groups dont l'utilisateur fait parti.
         app.get('/groupes',function(req,res){

@@ -131,7 +131,7 @@ db.Transaction.insert({
       },
       {
          "participant":{"nom":"netty","mel":"netty@gmail.com"},
-         "montantDu":25,
+         "montantDu":0,
          "montantRegle":0,
          "statut": "Ouverte"
       },
@@ -144,7 +144,7 @@ db.Transaction.insert({
       {
          "participant":{"nom":"saber","mel":"frejsaber@yahoo.fr"},
          "montantDu":25,
-         "montantRegle":15,
+         "montantRegle":0,
          "statut": "Ouverte"
       }
    ],

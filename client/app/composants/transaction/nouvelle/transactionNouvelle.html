@@ -6,40 +6,42 @@
   </h3></center>
   	
   <ng-form name="FormTransac"  class="maTransac">
-  	Cette transaction est établie entre:<br/><br/>
-  		Nom : <input name="inputName" ng-model="nomAjouter" placeholder="Saisir votre nom" required="obligatoire">
-  		<div ng-repeat="ami in amis | filter:nomAjouter" id="nameT" >
-        <div ng-repeat="a in ami.amis">
-          <h5> {{a.nom}} {{a.mel}} </h5> 
-          <button class='btn btn-primary' ng-click="ajouterAmi(a)"> + </button>
+    Pour l'instant vous ne pouvez pas établir des transaction avec les groupes dont vous faites parti.  
+  	Cette transaction est établie entre:
+  		Nom : <input name="inputName" class="form-control" ng-model="nomAjouter" placeholder="Chercher des amis" required="obligatoire">
+  		<div ng-repeat="ami in amis | filter:nomAjouter" ng-if="nomAjouter.length > 0" id="nameT" >
+        <div ng-repeat="a in ami.amis" class="amisTrans">
+          <h5>{{a.nom}}</h5>
+          </h5>{{a.mel}}</h5> 
+          <div class="ajouterAmiTrans">
+            <button class='btn btn-primary' ng-click="ajouterAmi(a)"> + </button>
+          </div>
         </div>
   		</div>
       <div>
-        <h3> Dans votre groupe: </h3>
-        <div ng-repeat="participant in participants">
-          <div ng-repeat="a in participant">
-            <h5> {{a.nom}} </h5>
-          </div>
+        <div>
+          <h5> Participants choisis: </h5>
         </div>
+        <span class='participantsChoisis' ng-repeat="participant in participants">
+          <span ng-repeat="a in participant">
+            <span> {{ a.nom }} </span>
+          </span>
+        </span>
       </div>
   		<label for="Description"> Description: </label> <br/>
-  		<textarea ng-model="description" required="obligatoire"> ... </textarea>
-  		<br/><br/>
-  		<label for="Montant"> Montant: </label> <br/>
-  		<input type="number" min="0.00" max="9999999999.99" ng-model="montant" required="obligatoire">  </input>
-  		<br/><br/>
-  		 Payé par:
-  		<select ng-model="participantRembourse">
-	      <option ng-repeat="part in participants">{{part.participant.mel}}</option>
-	    </select>
-      {{particpiantRembourse|json}}
-      <br/><br/>
-  		<br/><br/>
+  		<textarea class='form-control' ng-model="description" required="obligatoire"> ... </textarea>
+  		<div>
+        <label for="Montant"> Montant: </label> <br/>
+  		  <input type="number" min="0.00" max="9999999999.99" ng-model="montant" required="obligatoire">  </input>
+  		   Payé par:
+  		   <select ng-model="participantRembourse">
+	         <option ng-repeat="part in participants">{{part.participant.mel}}</option>
+	       </select>
+      </div>
   		<label for="SelectTypeTransac"> Sélectionner le type de transaction: </label> <br/>
 	    <select name="SelectTypeTransac" ng-model="typeTransaction">
-	      <option value="Exacte">Exacte</option>
-	      <option value="Equitable">Equitable</option>
-	    </select><br/><br/>
+	      <option value="Exacte" selected>Exacte</option>
+	    </select>
   		<button class="btn btn-primary btn-block" ng-click="sauvegarder()"> Sauvegarder </button>
 
   </ng-form>

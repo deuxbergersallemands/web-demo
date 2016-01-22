@@ -6,7 +6,7 @@ npm start
 #connecter à la base de données mongoDB sur localhost:27017/
 #demarrer l'application sur localhost:3000/
 
-vous pouvez vous connecter en ultilisant l'un des couples (mail, mot de passe) suivants :
-("frejsaber@yahoo.fr","MotDePasseDeSaber"),
-("netty@gmail.com","MotDePasseNetty"),
-("tristan@gmail.com","MotDePasseDeTristan")
+vous pouvez vous connecter en ultilisant le couple (mail, mot de passe) suivants :
+("netty@gmail.com","MotDePasseNetty")
+
+ATTENTION: pour une meilleur utilisation du site Lire fichier infos.txt avant lancement

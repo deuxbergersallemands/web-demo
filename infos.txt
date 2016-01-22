@@ -1,0 +1,25 @@
+Pour ces étapes on considère q'un utilisateur est connecté avec les identifiants, login: netty@gmail.com et mdp: MotDePasseNetty
+* Sur le tableau de bord l'utilisateur peut observer:
+		- l'état de son solde (si solde = 0 l'utilisateur n'a pas de dette, si solde<0 il a au moins une transaction à rembourser)
+		- les transactions qu'il doit payer
+		- les transactions qu'on doit lui rembourser
+* Pour afficher sa liste d'amis et de groupe,l'utilisateur doit aller dans la rubrique "Amis et groupes"
+* A partie de la page relation, l'utilisateur peut soit ajouter un ami ou soit créer un groupe d'amis.
+* Pour ajouter un ami, l'utilisateur doit saisir le nom de son ami dans l'inputText, ensuite une liste d'amis lui est proposée au bout de 3 caractères saisis. Seul les membres inscrits de splitwise (donc tous les utilisateurs de la BD) peuvent être ajouté, (tel l'ajout d'amis sur facebook). 
+* Pour créer un groupe et y ajouter des amis: la liste des amis de l'utilisateur lui est proposée apès avoir saisis 3 caractères. Seul des amis de sa liste d'amis peuvent être affecter au groupe
+* Pour créer une transaction, il faut que l'utilisateur ait au moins un ami dans sa liste d'amis. Seul des amis peuvent y être ajouté, et non un groupe d'amis
+
+
+
+*****************************************************
+AUTRE INFORMATION
+
+si en suivant les instructions de Readme vous n'arrivez pas à lancer l'application, faire:
+	1- télécharger dépot git
+	2- ce placer dans le répertoire web-dev (ou web-demo)et créer un dossier mongo_db
+	3- ouvrir un terminal depuis répertoire web-dev (web-demo) et lancer commande : "mongod --dbpath db_mongo"
+	4- ouvrir un autre terminal à partir du répertoire ..web-dev/config/scripts et lancer la commande: "mongo postInstall.js"
+	5- dans un autre terminal depuis le répertoire web-dev (ou web-demo) lancer commande: "npm start"
+
+	
+
