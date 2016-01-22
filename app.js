@@ -4,7 +4,7 @@ var Db = require('mongodb').Db,
     Server = require('mongodb').Server;
 
 
-var db = new Db('deuxbergersallemands_web-dev', new Server('localhost', 27017));
+var db = new Db('deuxbergersallemands_web-demo', new Server('localhost', 27017));
 var express=require("express");
 /****************************************************/
 var bodyParser = require('body-parser')
@@ -12,7 +12,7 @@ var md5 = require("md5")
 var cookieParser = require('cookie-parser')
 
 
-var url = "mongodb://localhost:27017/deuxbergersallemands_web-dev"
+var url = "mongodb://localhost:27017/deuxbergersallemands_web-demo"
 var app = express()
 
 app.use(bodyParser.json())
@@ -26,7 +26,7 @@ app.set("etag", getETag)
 
 MongoClient.connect(url, function(err, db) {
 
-
+console.log(url)
 
     /**************** Collection Historique******************/
     db.collection("Historique", function(err, Historique) {

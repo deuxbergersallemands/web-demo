@@ -1,6 +1,6 @@
 conn = new Mongo();
-db = conn.getDB('deuxbergersallemands_web-dev');
-db = db.getSiblingDB('deuxbergersallemands_web-dev');
+db = conn.getDB('deuxbergersallemands_web-demo');
+db = db.getSiblingDB('deuxbergersallemands_web-demo');
 
 
 db.createCollection("Utilisateur",
